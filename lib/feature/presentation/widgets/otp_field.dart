@@ -190,7 +190,8 @@ class _OtpFieldState extends State<OtpField> {
       child: TextFormField(
         controller: cntrl,
         focusNode: currentFocus,
-        obscureText: widget.hideText, obscuringCharacter: "✶",
+        obscureText: widget.hideText,
+        obscuringCharacter: "✶",
         keyboardType: TextInputType.number,
         textInputAction:
             nextFocus == null ? TextInputAction.done : TextInputAction.next,

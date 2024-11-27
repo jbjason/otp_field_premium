@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otp_field_premium/config/theme/theme.dart';
-import 'package:otp_field_premium/feature/presentation/otp_field_screen.dart';
+import 'package:otp_field_premium/feature/presentation/widgets/otp_field.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: AppTheme.light(),
       debugShowCheckedModeBanner: false,
-      home: const OtpFieldScreen(),
+      home: Scaffold(
+        body: Center(child: OtpField(length: 4, onSubmit: (val) {})),
+      ),
     );
   }
 }
