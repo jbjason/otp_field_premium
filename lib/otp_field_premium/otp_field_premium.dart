@@ -4,8 +4,8 @@ import 'package:otp_field_premium/core/util/mycolor.dart';
 
 enum OtpFiledShape { underscore, square }
 
-class OtpField extends StatefulWidget {
-  const OtpField({
+class OtpFieldPremium extends StatefulWidget {
+  const OtpFieldPremium({
     super.key,
     required this.length,
     required this.onSubmit,
@@ -20,7 +20,7 @@ class OtpField extends StatefulWidget {
     this.errorFillColor = MyColor.cardBackgroundColor,
     this.shadowElevation = 0,
     this.shodowColor = Colors.transparent,
-    this.hideText = true,
+    this.hideText = false,
     this.otpFiledShape = OtpFiledShape.square,
   });
   final int length;
@@ -39,10 +39,10 @@ class OtpField extends StatefulWidget {
   final bool hideText;
   final OtpFiledShape otpFiledShape;
   @override
-  State<OtpField> createState() => _OtpFieldState();
+  State<OtpFieldPremium> createState() => _OtpFieldPremiumState();
 }
 
-class _OtpFieldState extends State<OtpField> {
+class _OtpFieldPremiumState extends State<OtpFieldPremium> {
   final _formKey = GlobalKey<FormState>();
   InputBorder? _selectedFocusBorder;
   InputBorder? _selectedUnFocusBorder;
@@ -152,7 +152,7 @@ class _OtpFieldState extends State<OtpField> {
             return Expanded(
               child: Padding(
                 padding: EdgeInsets.only(right: isLastItem ? 0 : 8),
-                child: _getOtpField(
+                child: _getOtpFieldPremium(
                   cntrl: _otpControllerList[i],
                   currentFocus: _otpFocusList[i],
                   // if it's last otp-field then we don't need nextFocus
@@ -178,7 +178,7 @@ class _OtpFieldState extends State<OtpField> {
     widget.onSubmit(confirmedOTP);
   }
 
-  Widget _getOtpField(
+  Widget _getOtpFieldPremium(
       {required TextEditingController cntrl,
       required FocusNode currentFocus,
       FocusNode? nextFocus}) {

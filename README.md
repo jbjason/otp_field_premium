@@ -1,11 +1,5 @@
-# otp_field_premium
- 
-This is a simple yet premium customizable package for all kind of users.
 
-# OTP Field
-
-[![0.0.3]](https://pub.dev/packages/otp_field_premium)  
-A customizable and easy-to-use OTP (One-Time Password) input field package for Flutter, designed to enhance user experience with beautiful UI and flexible configurations.
+This is a simple yet highly customizable package for all kind of users.
 
 ## Features
 
@@ -18,64 +12,70 @@ A customizable and easy-to-use OTP (One-Time Password) input field package for F
 
 Add the following line to your `pubspec.yaml`:
 
-```yaml
+```dart
 dependencies:
-  otp_field: ^0.0.2
-Run flutter pub get to install the package.
+  otp_field: ^0.0.2  //Run flutter pub get to install the package.
+```
 
 ## Usage
 Here's a quick example to get started:
 
-```markdown
-import 'package:otp_field/otp_field.dart';
-
-class OTPExample extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("OTP Example"),
-      ),
-      body: Center(
-        child: OTPField(
-          length: 6,
-          onSubmit: (pin) {
-            print("Entered OTP: $pin");
-          },
-        ),
-      ),
-    );
-  }
-}
 ```dart
+import 'package:otp_field_premium/otp_field_premium/otp_field_premium.dart';
+
+  OTPField(
+    length: 6,
+    onSubmit: (pin) {
+      print("Entered OTP: $pin");
+    },
+  ),
+```
 
 ## Parameters
-Parameter	Type	Default	Description
-length	int	6	Number of fields for OTP input.
-onCompleted	Function(String)	null	Callback when all fields are filled.
-fieldStyle	OTPFieldStyle	Default styling	Style properties like border color, focus color, and active field styling.
-obscureText	bool	false	Whether to hide the entered text (useful for security).
-autoFocus	bool	true	Whether the first field should be auto-focused.
-Screenshots
-```markdown
-OTPField(
-  length: 4,
-  fieldStyle: OTPFieldStyle(
-    activeBorderColor: Colors.green,
-    focusBorderColor: Colors.orange,
-    inactiveBorderColor: Colors.grey,
-  ),
-  obscureText: true,
-  onCompleted: (pin) {
-    print("Received OTP: $pin");
-  },
-);
+
 ```dart
+  // set how many field you require **maximum 8**
+  final int length;
+  // returns the otp-field value if its **valid** 
+  final Function(String val) onSubmit;
+  // set the width of border while the otp-field is selected
+  final double focusBorderWidth;
+  // set the color of border while the otp-field is selected
+  final Color focusBorderColor;
+  // set the color of otp-field background while the otp-field is selected
+  final Color focusFillColor;
+  // set the idle(initial/unfocuse) boder color of the otp-field. 
+  final double unFocusBorderWidth;
+  // set the color of border while the otp-field is selected
+  final Color unFocusBorderColor;
+   // set the color of otp-field background while the otp-field is selected
+  final Color unFocusFillColor;
+  // set the width of border while the otp-field is empty
+  final double errorBorderWidth;
+  // set the color of border while the otp-field is selected
+  final Color errorBorderColor;
+   // set the color of otp-field background while the otp-field is selected
+  final Color errorFillColor;
+  // set the density of the shadow if u need shadow
+  final double shadowElevation;
+  // set the color of shadow
+  final Color shodowColor;
+  // if u want to hide otp text then set this value hideText=true
+  final bool hideText;
+  // there are two types of shape currently 1.OtpFiledShape.underscore 2.OtpFiledShape.square 
+  final OtpFiledShape otpFiledShape;
+```
 
 ## License
 This project is licensed under the MIT License.
 
+## Contributions
+Contributions are welcome! Feel free to file issues or submit pull requests to improve the package
+github: (https://github.com/jbjason/otp_field_premium)
+
 ## Support
-If you have any questions or issues, feel free to open an issue on GitHub or reach out to us via email.
+For questions or suggestions, contact me via jubayeral040@gmail.com.
+
+Check out the documentation on pub.dev for more details.
 
 ### Happy coding! 🚀
