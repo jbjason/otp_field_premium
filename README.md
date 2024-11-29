@@ -1,3 +1,4 @@
+<img width=30% height=14% src="https://github.com/user-attachments/assets/71cb7a16-e6f0-4fb2-80a4-19301d2819c3">
 
 This is a simple yet highly customizable package for all kind of users.
 
