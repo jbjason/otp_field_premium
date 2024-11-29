@@ -1,6 +1,6 @@
 name: otp_field_premium
 description: "This Package is ideal for developers who want to create secure and elegant OTP input experiences."
-version: 0.0.2
+version: 0.0.3
 repository: "https://github.com/jbjason/otp_field_premium/tree/main"
 
 environment:
@@ -23,7 +23,6 @@ flutter:
   assets:
     - CHANGELOG.md
     - assets/
-  #   - images/a_dot_ham.jpeg
 
   fonts:
     - family: Rubik_Regular

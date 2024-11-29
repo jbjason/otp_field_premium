@@ -1,2 +1,2 @@
-## 0.0.2
-New Edit Feature added
+## 0.0.3
+Readme file upated
