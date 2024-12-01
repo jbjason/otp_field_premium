@@ -15,7 +15,7 @@ Add the following line to your `pubspec.yaml`:
 
 ```dart
 dependencies:
-  otp_field: ^0.0.3  //Run flutter pub get to install the package.
+  otp_field: ^0.0.5  //Run flutter pub get to install the package.
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ Here's a quick example to get started:
 ```dart
 import 'package:otp_field_premium/otp_field_premium/otp_field_premium.dart';
 
-  OTPField(
+  OTPFieldPremium(
     length: 6,
     onSubmit: (pin) {
       print("Entered OTP: $pin");

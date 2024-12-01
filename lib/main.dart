@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otp_field_premium/config/theme/theme.dart';
 import 'package:otp_field_premium/core/util/mycolor.dart';
-import 'package:otp_field_premium/otp_field_premium/otp_field_premium.dart';
+import 'package:otp_field_premium/otp_field_premium.dart';
 
 void main() {
   runApp(const MyApp());
