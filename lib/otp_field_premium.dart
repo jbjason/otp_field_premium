@@ -105,25 +105,7 @@ class _OtpFieldPremiumState extends State<OtpFieldPremium> {
         borderSide: BorderSide(
             color: widget.errorBorderColor, width: widget.errorBorderWidth),
       );
-    }
-    // else if (widget.otpFiledShape == OtpFiledShape.circular) {
-    //   _selectedFocusBorder = OutlineInputBorder(
-    //     borderRadius: BorderRadius.circular(60),
-    //     borderSide: BorderSide(
-    //         color: widget.focusBorderColor, width: widget.focusBorderWidth),
-    //   );
-    //   _selectedUnFocusBorder = OutlineInputBorder(
-    //     borderRadius: BorderRadius.circular(60),
-    //     borderSide: BorderSide(
-    //         color: widget.unFocusBorderColor, width: widget.unFocusBorderWidth),
-    //   );
-    //   _selectedErrorBorder = OutlineInputBorder(
-    //     borderRadius: BorderRadius.circular(60),
-    //     borderSide: BorderSide(
-    //         color: widget.errorBorderColor, width: widget.errorBorderWidth),
-    //   );
-    // }
-    else {
+    } else {
       _selectedFocusBorder = UnderlineInputBorder(
         borderSide: BorderSide(
             color: widget.focusBorderColor, width: widget.focusBorderWidth),
@@ -153,6 +135,7 @@ class _OtpFieldPremiumState extends State<OtpFieldPremium> {
               child: Padding(
                 padding: EdgeInsets.only(right: isLastItem ? 0 : 8),
                 child: _getOtpFieldPremium(
+                  currentIndex: i,
                   cntrl: _otpControllerList[i],
                   currentFocus: _otpFocusList[i],
                   // if it's last otp-field then we don't need nextFocus
@@ -179,7 +162,8 @@ class _OtpFieldPremiumState extends State<OtpFieldPremium> {
   }
 
   Widget _getOtpFieldPremium(
-      {required TextEditingController cntrl,
+      {required int currentIndex,
+      required TextEditingController cntrl,
       required FocusNode currentFocus,
       FocusNode? nextFocus}) {
     return Material(
@@ -190,8 +174,7 @@ class _OtpFieldPremiumState extends State<OtpFieldPremium> {
       child: TextFormField(
         controller: cntrl,
         focusNode: currentFocus,
-        obscureText: widget.hideText,
-        obscuringCharacter: "✶",
+        obscureText: widget.hideText, obscuringCharacter: "✶",
         keyboardType: TextInputType.number,
         textInputAction:
             nextFocus == null ? TextInputAction.done : TextInputAction.next,
@@ -208,6 +191,8 @@ class _OtpFieldPremiumState extends State<OtpFieldPremium> {
           focusedErrorBorder: _selectedErrorBorder,
           errorStyle: const TextStyle(height: 0),
         ),
+        onSaved: (_) => _onSubmit(),
+        onFieldSubmitted: (_) => _onSubmit(),
         onChanged: (val) {
           if (val.isEmpty) {
             // if we remove a OTP-text, we may wanna stay on the same field, so doing nothing
@@ -231,8 +216,36 @@ class _OtpFieldPremiumState extends State<OtpFieldPremium> {
           FocusManager.instance.primaryFocus?.unfocus();
           _onSubmit();
         },
+        contextMenuBuilder: (context, editableTextState) {
+          return AdaptiveTextSelectionToolbar(
+            anchors: editableTextState.contextMenuAnchors,
+            children: [
+              TextSelectionToolbarTextButton(
+                padding: const EdgeInsets.all(10),
+                onPressed: () => _onPasteCode(currentIndex),
+                child: const Text('Paste'),
+              ),
+              TextSelectionToolbarTextButton(
+                padding: const EdgeInsets.all(10),
+                onPressed: () => FocusManager.instance.primaryFocus?.unfocus(),
+                child: const Text('Cancel'),
+              ),
+            ],
+          );
+        },
       ),
     );
+  }
+
+  void _onPasteCode(int currentIndex) {
+    Clipboard.getData('text/plain').then((value) {
+      if (value != null && value.text != null && value.text!.isNotEmpty) {
+        for (int i = 0; (i < widget.length) && (i < value.text!.length); i++) {
+          _otpControllerList[currentIndex + i].text = value.text![i];
+        }
+      }
+      FocusManager.instance.primaryFocus?.unfocus();
+    });
   }
 
   @override
