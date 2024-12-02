@@ -9,13 +9,15 @@ This is a simple yet highly customizable package for all kind of users.
 - 🔐 **Secure input**: Optionally obscure OTP input for sensitive use cases.
 - ⌨️ **Keyboard support**: Automatically focuses and handles input navigation.
 - 🗎🗎 **Copy Paste**: Easy otp Copy Paste option.
+- ❍  **Otp-Field Shape**: User can use Square, Underline, Circle shape for the otp-field.
+
 ## Installation
 
 Add the following line to your `pubspec.yaml`:
 
 ```dart
 dependencies:
-  otp_field: ^0.0.5  //Run flutter pub get to install the package.
+  otp_field: ^0.0.6  //Run flutter pub get to install the package.
 ```
 
 ## Usage
@@ -39,6 +41,8 @@ import 'package:otp_field_premium/otp_field_premium/otp_field_premium.dart';
   final int length;
   // returns the otp-field value if its **valid** 
   final Function(String val) onSubmit;
+  // set borderRadius of otp-field
+  final double borderRadius;
   // set the width of border while the otp-field is selected
   final double focusBorderWidth;
   // set the color of border while the otp-field is selected
@@ -63,15 +67,18 @@ import 'package:otp_field_premium/otp_field_premium/otp_field_premium.dart';
   final Color shodowColor;
   // if u want to hide otp text then set this value hideText=true
   final bool hideText;
-  // there are two types of shape currently 1.OtpFiledShape.underscore 2.OtpFiledShape.square 
+  // there are 3 types of shape currently 1.OtpFiledShape.underscore 2.OtpFiledShape.square 3. OtpFiledShape.circular
   final OtpFiledShape otpFiledShape;
 ```
+
+## Example
+Check out the full example in the [`example`](https://pub.dev/packages/otp_field_premium/example) folder.
 
 ## License
 This project is licensed under the MIT License.
 
 ## Contributions
-Contributions are welcome! Feel free to file issues or submit pull requests to improve the package(https://github.com/jbjason/otp_field_premium)
+Contributions are welcome! Feel free to file issues or submit pull requests to improve the package (https://github.com/jbjason/otp_field_premium)
 
 ## Support
 For questions or suggestions, contact me via jubayeral040@gmail.com.
