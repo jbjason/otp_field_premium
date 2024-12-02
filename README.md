@@ -33,6 +33,13 @@ import 'package:otp_field_premium/otp_field_premium/otp_field_premium.dart';
     },
   ),
 ```
+### Shapes
+1. shape = OtpFiledShape.square
+2. shape = OtpFiledShape.underscore
+3. shape = OtpFiledShape.circular
+
+
+<img width=30% height=14% src="https://github.com/user-attachments/assets/8e6e51c4-036a-4daf-9ed5-e5f6227e9fef"> <img width=30% height=14% src="https://github.com/user-attachments/assets/9bcf9725-9ec1-422b-99d7-a9d1ae8c6050"> <img width=30% height=14% src="https://github.com/user-attachments/assets/f9c8f378-e92c-428c-8c49-f7a02c73679e">
 
 ## Parameters
 
