@@ -8,7 +8,7 @@ This is a simple yet highly customizable package for all kind of users.
 - 🔢 **Variable OTP length**: Configure fields to accept OTPs of any length.
 - 🔐 **Secure input**: Optionally obscure OTP input for sensitive use cases.
 - ⌨️ **Keyboard support**: Automatically focuses and handles input navigation.
-
+- 🗎🗎 **Copy Paste**: Easy otp Copy Paste option.
 ## Installation
 
 Add the following line to your `pubspec.yaml`:
@@ -71,8 +71,7 @@ import 'package:otp_field_premium/otp_field_premium/otp_field_premium.dart';
 This project is licensed under the MIT License.
 
 ## Contributions
-Contributions are welcome! Feel free to file issues or submit pull requests to improve the package
-github: (https://github.com/jbjason/otp_field_premium)
+Contributions are welcome! Feel free to file issues or submit pull requests to improve the package(https://github.com/jbjason/otp_field_premium)
 
 ## Support
 For questions or suggestions, contact me via jubayeral040@gmail.com.
