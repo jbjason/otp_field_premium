@@ -1,7 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:otp_field_premium/core/util/mycolor.dart';
 
 enum OtpFiledShape { underscore, square, circular }
 
@@ -12,18 +11,18 @@ class OtpFieldPremium extends StatefulWidget {
       required this.onSubmit,
       this.borderRadius = 12,
       this.focusBorderWidth = .7,
-      this.focusBorderColor = MyColor.skyPrimary,
-      this.focusFillColor = MyColor.cardBackgroundColor,
+      this.focusBorderColor = const Color(0xFF30BCED),
+      this.focusFillColor = const Color(0xFFFAFAFA),
       this.unFocusBorderWidth = .3,
-      this.unFocusBorderColor = MyColor.inActiveColor,
-      this.unFocusFillColor = MyColor.cardBackgroundColor,
+      this.unFocusBorderColor = const Color(0xFFD6D6D6),
+      this.unFocusFillColor = const Color(0xFFFAFAFA),
       this.errorBorderWidth = 1,
       this.errorBorderColor = Colors.red,
-      this.errorFillColor = MyColor.cardBackgroundColor,
+      this.errorFillColor = const Color(0xFFFAFAFA),
       this.shadowElevation = 0,
       this.shodowColor = Colors.transparent,
       this.hideText = false,
-      this.otpFiledShape = OtpFiledShape.circular});
+      this.otpFiledShape = OtpFiledShape.square});
   final int length;
   final Function(String val) onSubmit;
   final double borderRadius;

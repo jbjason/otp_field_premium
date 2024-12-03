@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:otp_field_premium/config/theme/theme.dart';
-import 'package:otp_field_premium/core/util/mycolor.dart';
 import 'package:otp_field_premium/otp_field_premium.dart';
 
 void main() {
@@ -39,21 +38,21 @@ class MyApp extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium!
-                      .copyWith(color: MyColor.textThird),
+                      .copyWith(color: const Color(0xFF757575)),
                 ),
                 const SizedBox(height: 25),
                 OtpFieldPremium(
                   length: 4,
                   onSubmit: (val) => print(val),
                   focusBorderWidth: .7,
-                  focusBorderColor: MyColor.skyPrimary,
-                  focusFillColor: MyColor.cardBackgroundColor,
+                  focusBorderColor: const Color(0xFF30BCED),
+                  focusFillColor: const Color(0xFFFAFAFA),
                   unFocusBorderWidth: .3,
-                  unFocusBorderColor: MyColor.inActiveColor,
-                  unFocusFillColor: MyColor.cardBackgroundColor,
+                  unFocusBorderColor: const Color(0xFFD6D6D6),
+                  unFocusFillColor: const Color(0xFFFAFAFA),
                   errorBorderWidth: 1,
                   errorBorderColor: Colors.red,
-                  errorFillColor: MyColor.cardBackgroundColor,
+                  errorFillColor: const Color(0xFFFAFAFA),
                   shadowElevation: 0,
                   shodowColor: Colors.transparent,
                   hideText: false,
@@ -65,12 +64,13 @@ class MyApp extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("Didn't receive any code?  ",
-                          style: TextStyle(color: MyColor.textThird)),
+                          style: TextStyle(color: Color(0xFF757575))),
                       Text(
                         "Resend OTP",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: MyColor.skyPrimary),
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF30BCED),
+                        ),
                       ),
                     ],
                   ),
