@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs
 import 'package:flutter/material.dart';
 import 'package:otp_field_premium/core/util/mycolor.dart';
 import 'package:otp_field_premium/core/util/myconstant.dart';

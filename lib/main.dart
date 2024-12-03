@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs
 import 'package:flutter/material.dart';
 import 'package:otp_field_premium/config/theme/theme.dart';
 import 'package:otp_field_premium/otp_field_premium.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
                 const SizedBox(height: 25),
                 OtpFieldPremium(
                   length: 4,
-                  onSubmit: (val) => print(val),
+                  onSubmit: (val) {},
                   focusBorderWidth: .7,
                   focusBorderColor: const Color(0xFF30BCED),
                   focusFillColor: const Color(0xFFFAFAFA),

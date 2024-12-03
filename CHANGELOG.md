@@ -1,2 +1,2 @@
-## 0.0.7
-OTP field design updated
+## 0.0.8
+Documentation updated
