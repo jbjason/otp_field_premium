@@ -17,7 +17,7 @@ Add the following line to your `pubspec.yaml`:
 
 ```dart
 dependencies:
-  otp_field: ^0.0.6  //Run flutter pub get to install the package.
+  otp_field_premium: ^0.0.6  //Run flutter pub get to install the package.
 ```
 
 ## Usage
