@@ -1,2 +1,2 @@
-## 0.0.6
-copy-paste & circular otp-field added
+## 0.0.7
+OTP field design updated

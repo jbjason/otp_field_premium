@@ -17,14 +17,14 @@ Add the following line to your `pubspec.yaml`:
 
 ```dart
 dependencies:
-  otp_field_premium: ^0.0.6  //Run flutter pub get to install the package.
+  otp_field_premium: ^0.0.7  //Run flutter pub get to install the package.
 ```
 
 ## Usage
 Here's a quick example to get started:
 
 ```dart
-import 'package:otp_field_premium/otp_field_premium/otp_field_premium.dart';
+import 'package:otp_field_premium/otp_field_premium.dart';
 
   OTPFieldPremium(
     length: 6,
